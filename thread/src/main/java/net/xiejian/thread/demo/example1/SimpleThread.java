@@ -1,4 +1,4 @@
-package net.xiejian.thread.demo;
+package net.xiejian.thread.demo.example1;
 
 /**
  * 简单线程

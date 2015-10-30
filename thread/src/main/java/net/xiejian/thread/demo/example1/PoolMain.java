@@ -1,11 +1,11 @@
-package net.xiejian.thread.demo;
+package net.xiejian.thread.demo.example1;
 
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
 /**
- * 线程池
+ * 线程池简单使用
  * @author jian_xie
  * @date 2015年10月30日
  */
