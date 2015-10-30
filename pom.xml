@@ -25,5 +25,6 @@
   </dependencyManagement>
   <modules>
     <module>utils</module>
+    <module>thread</module>
   </modules>
 </project>
