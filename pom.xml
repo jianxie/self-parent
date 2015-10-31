@@ -32,6 +32,6 @@
   </dependencyManagement>
   <modules>
     <module>utils</module>
-    <module>thread</module>
+    <module>demo</module>
   </modules>
 </project>
