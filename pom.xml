@@ -14,6 +14,8 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <junit.version>4.11</junit.version>
     <disruptor.version>3.3.2</disruptor.version>
+    <httpclient.version>4.5.1</httpclient.version>
+    <httpasyncclient.version>4.1</httpasyncclient.version>
   </properties>
   <dependencyManagement>
     <dependencies>
@@ -27,6 +29,16 @@
         <groupId>com.lmax</groupId>
         <artifactId>disruptor</artifactId>
         <version>${disruptor.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.apache.httpcomponents</groupId>
+        <artifactId>httpasyncclient</artifactId>
+        <version>${httpasyncclient.version}</version>
+      </dependency>
+      <dependency>
+	    <groupId>org.apache.httpcomponents</groupId>
+	    <artifactId>httpclient</artifactId>
+	    <version>${httpclient.version}</version>
       </dependency>
     </dependencies>
   </dependencyManagement>
