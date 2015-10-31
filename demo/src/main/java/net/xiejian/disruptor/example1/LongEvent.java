@@ -13,5 +13,7 @@ public class LongEvent {
 		this.value = value;
 	}
 	
-	
+	public long getValue(){
+		return this.value;
+	}
 }
