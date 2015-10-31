@@ -24,6 +24,8 @@ import org.apache.http.impl.nio.client.HttpAsyncClients;
  * @date 2015年10月31日
  */
 public class HttpClientMain {
+	
+	private static final int times = 10;
 
 	public static void main(String[] args) throws Exception {
 		HttpClientMain httpClientMain = new HttpClientMain();
@@ -43,11 +45,11 @@ public class HttpClientMain {
 		CloseableHttpClient httpclient = HttpClients.createDefault();
 
 		// Execute 500 request in async
-		HttpGet request = new HttpGet("http://www.baidu.com");
-		for (int i = 0; i < 50; i++) {
+		HttpGet request = new HttpGet("http://www.coder4.com/");
+		for (int i = 0; i < times; i++) {
 			request.setHeader("Connection", "close");
 			CloseableHttpResponse response = httpclient.execute(request);
-			// System.out.println(response.getStatusLine());
+//			System.out.println("sync:" + i + response.getStatusLine());
 			response.getStatusLine();
 			response.close();
 		}
@@ -61,17 +63,18 @@ public class HttpClientMain {
 		httpclient.start();
 
 		// Execute 100 request in async
-		final HttpGet request = new HttpGet("http://www.baidu.com");
+		final HttpGet request = new HttpGet("http://www.coder4.com/");
 		request.setHeader("Connection", "close");
 		List<Future<HttpResponse>> respList = new LinkedList<Future<HttpResponse>>();
-		for (int i = 0; i < 50; i++) {
+		for (int i = 0; i < times; i++) {
 			respList.add(httpclient.execute(request, null));
 		}
 
 		// Print response code
+		int i = 0;
 		for (Future<HttpResponse> response : respList) {
 			response.get().getStatusLine();
-			// System.out.println(response.get().getStatusLine());
+//			System.out.println("async:" + i++ + response.get().getStatusLine());
 		}
 
 		httpclient.close();

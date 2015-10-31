@@ -73,7 +73,7 @@ public class LockTimeMain {
 		run();
 	}
 
-	private void run() {
+	private void run() {		
 		for(int i=0; i < 1000; i++){
 			List list1 = new ArrayList(i);
 //			List list2 = new ArrayList();
