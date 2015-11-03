@@ -16,6 +16,7 @@
     <disruptor.version>3.3.2</disruptor.version>
     <httpclient.version>4.5.1</httpclient.version>
     <httpasyncclient.version>4.1</httpasyncclient.version>
+    <assertj.version>1.7.0</assertj.version>
   </properties>
   <dependencyManagement>
     <dependencies>
@@ -40,10 +41,18 @@
 	    <artifactId>httpclient</artifactId>
 	    <version>${httpclient.version}</version>
       </dependency>
+      <!-- assertj -->
+      <dependency>
+          <groupId>org.assertj</groupId>
+          <artifactId>assertj-core</artifactId>
+          <version>${assertj.version}</version>
+          <scope>test</scope>
+      </dependency>
     </dependencies>
   </dependencyManagement>
   <modules>
     <module>utils</module>
     <module>demo</module>
+    <module>JUnitDemo</module>
   </modules>
 </project>
