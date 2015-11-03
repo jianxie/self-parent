@@ -29,7 +29,7 @@ public class FutureTaskMain {
 		System.out.println("主线程在执行任务");
 		
 		try {
-			System.out.println("task2运行结果"+futureTask.get());
+			System.out.println("task2运行结果"+futureTask2.get());
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		} catch (ExecutionException e) {
