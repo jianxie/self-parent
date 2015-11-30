@@ -17,6 +17,10 @@
     <httpclient.version>4.5.1</httpclient.version>
     <httpasyncclient.version>4.1</httpasyncclient.version>
     <assertj.version>1.7.0</assertj.version>
+    <servlet.version>4.0.0-b01</servlet.version>
+    <mongodb-driver.version>3.0.4</mongodb-driver.version>
+    <spring.version>4.2.3.RELEASE</spring.version>
+    <spring-data-mongodb.version>1.8.1.RELEASE</spring-data-mongodb.version>
   </properties>
   <dependencyManagement>
     <dependencies>
@@ -41,12 +45,57 @@
 	    <artifactId>httpclient</artifactId>
 	    <version>${httpclient.version}</version>
       </dependency>
-      <!-- assertj -->
+      <!-- assertj 断言-->
       <dependency>
           <groupId>org.assertj</groupId>
           <artifactId>assertj-core</artifactId>
           <version>${assertj.version}</version>
           <scope>test</scope>
+      </dependency>
+      <dependency>
+        <groupId>javax.servlet</groupId>
+        <artifactId>javax.servlet-api</artifactId>
+        <version>${servlet.version}</version>
+      </dependency>
+      <!--  
+      <dependency>
+        <groupId>org.mongodb</groupId>
+        <artifactId>mongodb-driver</artifactId>
+        <version>${mongodb-driver.version}</version>
+      </dependency>
+      -->
+      <!-- spring start -->
+      <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-webmvc</artifactId>
+        <version>${spring.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-aop</artifactId>
+        <version>${spring.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-beans</artifactId>
+        <version>${spring.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-core</artifactId>
+        <version>${spring.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-context</artifactId>
+        <version>${spring.version}</version>
+      </dependency>
+      <!-- spring end -->
+      <!-- mongodb 驱动 -->
+      <dependency>
+        <groupId>org.springframework.data</groupId>
+        <artifactId>spring-data-mongodb</artifactId>
+        <version>${spring-data-mongodb.version.version}</version>
       </dependency>
     </dependencies>
   </dependencyManagement>
@@ -54,5 +103,6 @@
     <module>utils</module>
     <module>demo</module>
     <module>JUnitDemo</module>
+    <module>springAndMongdb</module>
   </modules>
 </project>
