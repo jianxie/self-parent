@@ -104,5 +104,6 @@
     <module>demo</module>
     <module>JUnitDemo</module>
     <module>springAndMongdb</module>
+    <module>springBase</module>
   </modules>
 </project>

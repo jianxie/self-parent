@@ -2,7 +2,7 @@ package net.xiejian.lock;
 
 public class BufferVsBuilderMain {
 	
-	private static final int times = 10000000;
+	private static final int times = 1000000;
 
 	public static void main(String[] args) {
 		long start, end;
@@ -15,6 +15,11 @@ public class BufferVsBuilderMain {
 		builder();
 		end = System.currentTimeMillis();
 		System.out.println("builder:" + (end - start));
+		
+		start = System.currentTimeMillis();
+//		add();
+		end = System.currentTimeMillis();
+		System.out.println("add:" + (end - start));
 	}
 	
 	public static void buffer(){
@@ -28,6 +33,13 @@ public class BufferVsBuilderMain {
 		StringBuilder sb = new StringBuilder();
 		for(int i = 0; i < times; i++){
 			sb.append(sb);
+		}
+	}
+	
+	public static void add(){
+		String str = "";
+		for(int i = 0; i < times; i++){
+			str += i;
 		}
 	}
 
