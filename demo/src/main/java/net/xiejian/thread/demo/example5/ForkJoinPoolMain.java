@@ -21,10 +21,15 @@ public class ForkJoinPoolMain {
 		}
 		
 		System.out.println("初始化时的总和="+total);
-		
-		Future<Integer> future = forkJoinPool.submit(new SumTask(arr, 0, arr.length));
+		SumTask sumTask = new SumTask(arr, 0, arr.length);
+		Future<Integer> future = forkJoinPool.submit(sumTask);
 		System.out.println("sum: " + future.get());
-		
+		if(sumTask.isCompletedAbnormally()){
+			
+		}
+		if(sumTask.isCompletedNormally()){
+			
+		}
 		// 关闭线程池    
 		forkJoinPool.shutdown();
 	}
