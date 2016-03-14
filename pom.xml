@@ -106,5 +106,6 @@
     <module>springAndMongdb</module>
     <module>springBase</module>
     <module>springMVC</module>
+    <module>test</module>
   </modules>
 </project>
