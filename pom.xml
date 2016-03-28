@@ -12,15 +12,33 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <!-- junit -->
     <junit.version>4.11</junit.version>
     <disruptor.version>3.3.2</disruptor.version>
     <httpclient.version>4.5.1</httpclient.version>
     <httpasyncclient.version>4.1</httpasyncclient.version>
     <assertj.version>1.7.0</assertj.version>
+    <!-- aspectjweaver -->
+    <aspectjweaver.version>1.6.11</aspectjweaver.version>
     <servlet.version>4.0.0-b01</servlet.version>
     <mongodb-driver.version>3.0.4</mongodb-driver.version>
     <spring.version>4.2.3.RELEASE</spring.version>
-    <spring-data-mongodb.version>1.8.1.RELEASE</spring-data-mongodb.version>
+    <spring-data-mongodb.version>1.8.1.RELEASE</spring-data-mongodb.version><!-- Mybatis 版本号 -->
+    <!-- mybatis版本 -->
+    <mybatis.version>3.2.7</mybatis.version>
+    <!-- mybatis-spring -->
+    <mybatis-spring.version>1.2.2</mybatis-spring.version>
+    <!-- 阿里数据源版本 -->
+    <druid.version>1.0.7</druid.version>
+    <!-- log4j日志文件管理包 -->
+    <slf4j.version>1.7.7</slf4j.version>
+    <log4j.version>1.2.17</log4j.version>
+    <!-- mysql驱动版本 -->
+    <mysql.connector.version>5.1.29</mysql.connector.version>
+    <!-- jackson版本 -->
+    <jackson.version>1.9.13</jackson.version>
+    <!-- fileupload版本 -->
+    <fileupload.version>1.2</fileupload.version>
   </properties>
   <dependencyManagement>
     <dependencies>
@@ -52,6 +70,13 @@
           <version>${assertj.version}</version>
           <scope>test</scope>
       </dependency>
+      <!-- 
+      <dependency>
+        <groupId>org.aspectj</groupId>
+        <artifactId>aspectjweaver</artifactId>
+        <version>${aspectjweaver.version}</version>
+      </dependency>
+      -->
       <dependency>
         <groupId>javax.servlet</groupId>
         <artifactId>javax.servlet-api</artifactId>
@@ -95,7 +120,66 @@
       <dependency>
         <groupId>org.springframework.data</groupId>
         <artifactId>spring-data-mongodb</artifactId>
-        <version>${spring-data-mongodb.version.version}</version>
+        <version>${spring-data-mongodb.version}</version>
+      </dependency>
+      <!-- mybatis 核心包 -->    
+      <dependency>
+        <groupId>org.mybatis</groupId>
+        <artifactId>mybatis</artifactId>
+        <version>${mybatis.version}</version>
+      </dependency>
+      <!-- mybatis-spring包 -->
+      <dependency>
+          <groupId>org.mybatis</groupId>
+          <artifactId>mybatis-spring</artifactId>
+          <version>${mybatis-spring.version}</version>
+      </dependency>
+      <!-- mysql驱动 -->
+      <dependency>
+          <groupId>mysql</groupId>
+          <artifactId>mysql-connector-java</artifactId>
+          <version>${mysql.connector.version}</version>
+      </dependency>
+      <!-- 使用阿里数据池 -->
+      <dependency>
+        <groupId>com.alibaba</groupId>
+        <artifactId>druid</artifactId>
+        <version>${druid.version}</version>
+      </dependency>
+      <!-- 日志文件管理包 
+        log start-->
+      <dependency>
+          <groupId>log4j</groupId>
+          <artifactId>log4j</artifactId>
+          <version>${log4j.version}</version>
+      </dependency>
+      <dependency>
+          <groupId>org.slf4j</groupId>
+          <artifactId>slf4j-api</artifactId>
+          <version>${slf4j.version}</version>
+      </dependency>
+      <dependency>
+          <groupId>org.slf4j</groupId>
+          <artifactId>slf4j-log4j12</artifactId>
+          <version>${slf4j.version}</version>
+      </dependency>
+      <!-- log end -->
+      <!-- jackson -->
+      <dependency>
+          <groupId>org.codehaus.jackson</groupId>
+          <artifactId>jackson-core-asl</artifactId>
+          <version>${jackson.version}</version>
+      </dependency>
+      <dependency>
+          <groupId>org.codehaus.jackson</groupId>
+          <artifactId>jackson-mapper-asl</artifactId>
+          <version>${jackson.version}</version>
+      </dependency>
+      <!-- fileupload -->
+      <dependency>
+          <groupId>commons-fileupload</groupId>
+          <artifactId>commons-fileupload</artifactId>
+          <version>${fileupload.version}</version>
       </dependency>
     </dependencies>
   </dependencyManagement>
