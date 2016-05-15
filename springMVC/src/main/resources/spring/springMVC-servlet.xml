@@ -32,9 +32,10 @@
         </property>
     </bean>
     <!-- 扫描controller层 -->
-    <context:component-scan base-package="net.xiejian.controller" />
-    <context:component-scan base-package="net.xiejian.*.controller" />
-    <context:component-scan base-package="net.xiejian.*.*.controller" />
+        <context:component-scan base-package="net.xiejian.springMVC.*" />
+    <context:component-scan base-package="net.xiejian.springMVC.controller" />
+    <context:component-scan base-package="net.xiejian.springMVC.*.controller" />
+    <context:component-scan base-package="net.xiejian.springMVC.*.*.controller" />
     <!-- 启用注解方式 --> 
     <mvc:annotation-driven />   
     <!-- 处理静态资源请求 --> 

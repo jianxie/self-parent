@@ -23,7 +23,7 @@
     <import resource="classpath:spring/spring-datasource.xml" />
     
     <!-- 自动扫描组件 这里要把Controller去除 他们是在springmvc-servlet.xml中配置的，如果不去除或不正确配置会影响事务管理(连接也不会自动关闭)的. -->
-    <context:component-scan base-package="demo">
+    <context:component-scan base-package="net">
         <context:exclude-filter type="regex" expression="net.xiejian.controller.*" />
         <context:exclude-filter type="regex" expression="net.xiejian.*.controller.*"/>
         <context:exclude-filter type="regex" expression="net.xiejian.*.*.controller.*"/>
@@ -33,14 +33,15 @@
     <!--  -->
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
       <property name="configLocation" value="classpath:mybatis/configuration.xml"/>
-      <property name="mapperLocations" value="classpath*:net.xiejian/**/mapper/*.xml"/>            
+      <!-- 这里使用/ -->
+      <property name="mapperLocations" value="classpath*:net/xiejian/springMVC/**/mapper/*.xml"/>            
       <property name="dataSource" ref="dataSource"/>
     </bean>
     
     <!-- 通过扫描的模式(自动扫描映射器)，所有的mapper都继承SqlMapper接口的接口， 这样一个bean就可以了 -->
     <!-- 可指定多个包，用分号或者逗号隔开 -->
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-        <property name="basePackage" value="demo.mapper"/>
+        <property name="basePackage" value="net.xiejian.springMVC.mapper"/>
         <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory" />
     </bean>
     
@@ -54,7 +55,7 @@
        </tx:attributes>
     </tx:advice>
     <aop:config>
-       <aop:advisor pointcut="execution(* net.xiejian.service.*.*Service.*(..))" advice-ref="txAdvice"/>
+       <aop:advisor pointcut="execution(* net.xiejian.sprin.service.*.*Service.*(..))" advice-ref="txAdvice"/>
        <aop:advisor pointcut="execution(* net.xiejian.*.service.*.*Service.*(..))" advice-ref="txAdvice"/>
        <aop:advisor pointcut="execution(* net.xiejian.*.*.service.*.*Service.*(..))" advice-ref="txAdvice"/>
     </aop:config>

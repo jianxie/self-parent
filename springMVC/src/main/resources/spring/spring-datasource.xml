@@ -4,11 +4,13 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans 
            http://www.springframework.org/schema/beans/spring-beans-4.2.xsd">   
     <!-- 数据源的配置 -->
+    <!-- 
     <bean id="dataSource"
         class="org.springframework.jdbc.datasource.LazyConnectionDataSourceProxy">
         <property name="targetDataSource" ref="druipDataSource">
         </property>
     </bean>
+    -->
     
     <!-- 配置jdbc 连接池 -->
     <!--  
@@ -70,7 +72,7 @@
     </bean>
     -->
     <!-- 使用阿里巴巴duip -->
-    <bean id="druipDataSource" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close">
+    <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close">
         <property name="url" value="${jdbcUrl}"/>
         <property name="username" value="${username}"/>
         <property name="password" value="${password}"/>
