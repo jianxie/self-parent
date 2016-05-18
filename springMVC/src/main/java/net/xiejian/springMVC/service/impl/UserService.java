@@ -22,7 +22,6 @@ public class UserService implements IUserService{
 	
 	@Override
 	public User getUserByName(String name) {
-//		return userMapper.getUserByName(name);
 		return userDao.getUserByName(name);
 	}
 
