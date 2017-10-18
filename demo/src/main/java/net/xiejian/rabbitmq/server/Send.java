@@ -23,7 +23,7 @@ public class Send {
 		Connection connection = factory.newConnection();
 		
 		Channel channel = connection.createChannel();
-		
+		// 声明一个队列
 		channel.queueDeclare(Queue_name, false, false, false, null);
 		
 		String message = "Hello world!";

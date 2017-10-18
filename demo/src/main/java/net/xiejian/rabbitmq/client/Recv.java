@@ -21,7 +21,7 @@ public class Recv {
 		channel.queueDeclare(Queue_name, false, false, false, null);
 		
 		QueueingConsumer	consumer = new QueueingConsumer(channel);
-		
+		// 获取队列的消息
 		channel.basicConsume(Queue_name, true, consumer);
 		Delivery delivery = null;
 		String message = null;
