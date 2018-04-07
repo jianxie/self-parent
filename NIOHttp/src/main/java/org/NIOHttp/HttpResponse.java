@@ -5,8 +5,6 @@ import java.nio.channels.SelectionKey;
 /**  
  * @Title:  HttpResponse.java   
  * @Description: http响应
- * @author: Han   
- * @date:   2016年7月16日 下午2:20:41  
  */  
 public class HttpResponse implements Response {
     

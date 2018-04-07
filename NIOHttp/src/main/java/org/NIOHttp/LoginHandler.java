@@ -8,9 +8,9 @@ import org.apache.log4j.Logger;
  * @author: Han   
  * @date:   2016年7月16日 下午2:08:18  
  */  
-public class LogionHandler extends AbstractHandler{
+public class LoginHandler extends AbstractHandler{
 
-    private Logger logger = Logger.getLogger(LogionHandler.class);
+    private Logger logger = Logger.getLogger(LoginHandler.class);
     
     @Override
     public void doGet(Context context) {

@@ -88,7 +88,7 @@ public class ResponseHandler {
             html = new StringBuilder();
             
             try {
-                reader = new BufferedReader(new FileReader(new File(htmlFile)));
+                reader = new BufferedReader(new FileReader(new File(ClassLoader.getSystemResource(htmlFile).getPath())));
                 String htmlStr;
                 htmlStr = reader.readLine();
                 while(htmlStr != null) {
