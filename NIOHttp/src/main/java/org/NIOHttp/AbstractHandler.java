@@ -3,8 +3,6 @@ package org.NIOHttp;
 /**  
  * @Title:  AbstractHandler.java   
  * @Description: Handler抽象类
- * @author: Han   
- * @date:   2016年7月16日 下午2:11:57  
  */  
 public class AbstractHandler implements Handler {
     

@@ -3,8 +3,6 @@ package org.NIOHttp;
 /**  
  * @Title:  Handler.java   
  * @Description: 接口设计：处理器Handler接口
- * @author: Han   
- * @date:   2016年7月12日 下午7:12:37  
  */  
 public interface Handler {
     

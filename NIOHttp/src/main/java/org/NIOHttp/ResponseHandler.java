@@ -5,6 +5,8 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.nio.ByteBuffer;
 import java.nio.channels.SelectionKey;
 import java.nio.channels.Selector;
@@ -84,18 +86,17 @@ public class ResponseHandler {
     private String setHtml(Context context) {
         StringBuilder html = null;
         if(htmlFile != null && htmlFile.length() > 0) {
-            
             html = new StringBuilder();
-            
             try {
-                reader = new BufferedReader(new FileReader(new File(htmlFile)));
+            	ClassLoader classLoader = this.getClass().getClassLoader();
+            	InputStream inputStream = classLoader.getResourceAsStream(htmlFile);
+                reader = new BufferedReader(new InputStreamReader(inputStream));
                 String htmlStr;
                 htmlStr = reader.readLine();
                 while(htmlStr != null) {
                     html.append(htmlStr + "\r\n");
                     htmlStr = reader.readLine();
                 }
-                
             } catch (FileNotFoundException e) {
                 e.printStackTrace();
             } catch (IOException e) {

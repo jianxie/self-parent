@@ -1,6 +1,8 @@
 package org.NIOHttp;
 
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.InputStream;
 import java.util.List;
 
 import org.apache.log4j.Logger;
@@ -24,12 +26,14 @@ public class XMLUtil {
     public static Element getRootElement(String xmlPath) {
         Document document = null;;
         try {
-        	if(ClassLoader.getSystemResource(xmlPath) == null){
+        	ClassLoader classLoader = XMLUtil.class.getClassLoader();
+        	if(classLoader.getResource(xmlPath) == null){
         		logger.info("找不到指定的xml文件的路径" + xmlPath + "！");
         		return null;
         	}
-        	File xmlFile = new File(ClassLoader.getSystemResource(xmlPath).getPath());
-            document = reader.read(xmlFile);
+        	logger.info(classLoader.getResource(xmlPath).getPath());
+        	InputStream inputStream = classLoader.getResourceAsStream(xmlPath);
+            document = reader.read(inputStream);
         } catch (DocumentException e) {
             logger.error("找不到指定的xml文件的路径" + xmlPath + "！");
             return null;

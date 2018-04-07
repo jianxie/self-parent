@@ -27,7 +27,7 @@ public class HttpHandler implements Runnable {
 
     @Override
     public void run() {
-        //初始化上下文
+        //初始化上下文,设置请求与返回
         context.setContext(requestHeader, key);
         //得到uri
         String uri = context.getRequest().getUri();

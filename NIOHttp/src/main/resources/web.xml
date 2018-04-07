@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml version="1.0" encoding="UTF-8"?>
 <server>
     <handler>
-        <handler-class>org.NIOHttp.LogionHandler</handler-class>
+        <handler-class>org.NIOHttp.LoginHandler</handler-class>
         <url-patten>/login</url-patten>
     </handler>
 </server>
